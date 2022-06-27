@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: listing
+  profiles:
+    active: dev
+  config:
+    import: "configserver:http://localhost:8888"
+  cloud:
+    config:
+      uri: http://localhost:8888/
+      username: eauctionUsr
+      password: password1
