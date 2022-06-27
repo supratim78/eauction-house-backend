@@ -1,0 +1,30 @@
+server:
+  port: 8090
+eureka:
+  client:
+    region: default
+    register-with-eureka: true
+    fetch-registry: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: "http://localhost:8010/eureka/"
+jwt:
+  secret: "SECRET"
+  token:
+    accessToken:
+      validity: "720000000"
+    refreshToken:
+      validity: "86400000"    
+spring:
+  application:
+    name: auth
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: "org.hibernate.dialect.MySQL8Dialect"
+  datasource:
+    url: "jdbc:mysql://localhost:3306/eauction_house_user"
+    username: "dev"
+    password: "password1"

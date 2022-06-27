@@ -1,0 +1,41 @@
+server:
+  port: 8050
+eureka:
+  client:
+    region: default
+    register-with-eureka: true
+    fetch-registry: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: "http://localhost:8010/eureka/"
+spring:
+  application:
+    name: Bid
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: "localhost:9092"
+          defaultBrokerPort: "9092"
+          zkNodes: "zookeeper"
+          defaultZkPort: "2181"
+      bindings:
+        #output:
+        #  destination: "PRODUCT_TOPIC"
+        output:
+          destination: "BIDS_PLACED_BY_BUYER"
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: "org.hibernate.dialect.MySQL8Dialect"
+  datasource:
+    url: "jdbc:mysql://localhost:3306/eauction_house_bid"
+    username: "dev"
+    password: "password1"
+  #kafka:
+  #  producer:
+  #   key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+  #    value-serializer: "org.springframework.kafka.support.serializer.JsonSerializer"
+  #    bootstrap-servers:  "localhost:9092"
