@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "993f4ce5-1608-44bf-859c-bab852974e59",
+		"name": "E-Auction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Register Seller",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTIzMjA0NDAsImV4cCI6MTY1MjMyMDc0MH0.EiPyqTiZF9_iT0oKuwpIRy58S0YtGzbsKev8H-J_81vjmpko-9AzFcqpHZnB2bQ1BXzRZUaFij5K8hoUGjzL6g",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"supratim Bhattacharyya\",\r\n\t\"email\" : \"supratim@gmail.com\",\r\n    \"password\" : \"XYZ\",\r\n    \"confirmpassword\" : \"XYZ\",\r\n    \"type\" : \"seller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/user/register-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"user",
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Buyer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTIzMjA0NDAsImV4cCI6MTY1MjMyMDc0MH0.EiPyqTiZF9_iT0oKuwpIRy58S0YtGzbsKev8H-J_81vjmpko-9AzFcqpHZnB2bQ1BXzRZUaFij5K8hoUGjzL6g",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Amoll Das\",\r\n\t\"email\" : \"amoll@gmail.com\",\r\n    \"password\" : \"XYZ\",\r\n    \"confirmpassword\" : \"XYZ\",\r\n    \"type\" : \"buyer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/user/register-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"user",
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTIzMjA0NDAsImV4cCI6MTY1MjMyMDc0MH0.EiPyqTiZF9_iT0oKuwpIRy58S0YtGzbsKev8H-J_81vjmpko-9AzFcqpHZnB2bQ1BXzRZUaFij5K8hoUGjzL6g",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"supratim Bhattacharyya\",\r\n    \"password\" : \"XYZ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE2NTYyODk0NjMsImV4cCI6MTY1NzAwOTQ2M30.MuLLD7AYd30htbS3HEvdLuXcemOzTUNd-8RGIal8YOl-Y9-za00CIlpvRtL99DmB5igfABdApw5moC1YvOK80w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"Test Product121\",\r\n\t\"shortDescription\" : \"This is Test Product121's short description\",\r\n\t\"detailedDescription\" : \"This is Test Product121's detail description\",\r\n\t\"category\" : \"Painting\",\r\n\t\"startingPrice\" : \"500\",\r\n\t\"bidEndDate\" : \"11/07/2022\",\r\n\t\"firstName\" : \"Supratim\",\r\n\t\"lastName\" : \"Bhattacharyya\",\r\n\t\"address\" : \"61, Santoshpur Avenue, Kolkata 700075\",\r\n\t\"city\" : \"Kolkata\",\r\n    \"state\" : \"West Bengal\",\r\n\t\"pin\" : \"700075\",\r\n\t\"phone\" : \"9825002500\",\r\n\t\"email\" : \"supratim@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/seller/add-product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Product Negetive",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE2NTYyMjcyNzIsImV4cCI6MTY1Njk0NzI3Mn0.n3XDva-fOwTUcpVUXmjuSYLYuR8hL6k_Ea3VqM8OSC_3sByv4QD57sialS-rwpBSAeircoU814uqFhFQAJF3Zw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"Test Product120\",\r\n\t\"shortDescription\" : \"This is Test Product120's short description\",\r\n\t\"detailedDescription\" : \"This is Test Product120's detail description\",\r\n\t\"category\" : \"Painting\",\r\n\t\"startingPrice\" : \"300\",\r\n\t\"bidEndDate\" : \"11/07/2022\",\r\n\t\"firstName\" : \"Supratim\",\r\n\t\"lastName\" : \"Bhattacharyya\",\r\n\t\"address\" : \"61, Santoshpur Avenue, Kolkata 700075\",\r\n\t\"city\" : \"Kolkata\",\r\n    \"state\" : \"West Bengal\",\r\n\t\"pin\" : \"700075\",\r\n\t\"phone\" : \"9825002500\",\r\n\t\"email\" : \"supratimgmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/seller/add-product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Place A Bid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJidXllciIsImlhdCI6MTY1NjIzMzQ0MywiZXhwIjoxNjU2OTUzNDQzfQ.wtXpko9_kYnxyB8qLFu0cHlb5r3A_8-81XhEAY17fsd04dO8DOFIXDcM2pKOrQlu_u1_Ix7vfY9sK2rRnKBEtA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Amoll\",\r\n\t\"lastName\" : \"Das\",\r\n\t\"address\" : \"61, Santoshpur Avenue, Kolkata 700075\",\r\n\t\"city\" : \"Kolkata\",\r\n    \"state\" : \"West Bengal\",\r\n\t\"pin\" : \"700075\",\r\n\t\"phone\" : \"9835003501\",\r\n\t\"email\" : \"amoll@gmail.com\",\r\n    \"productId\" : \"53\",\r\n    \"bidAmount\" : \"1200\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/buyer/place-bid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"buyer",
+								"place-bid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJidXllciIsImlhdCI6MTY1NjIyNzM5MSwiZXhwIjoxNjU2OTQ3MzkxfQ.9BNqZkjC3-GkJ57l9P14Y3L6kj5dYzT8Vfc0x7dfMp6q79Oj-z-NFhI0etgEAh9MQ6plwyswA_vgSrOcajtD6w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/e-auction/api/v1/buyer/update-bid/53/dipak@gmail.com/1000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"buyer",
+								"update-bid",
+								"53",
+								"dipak@gmail.com",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Biddings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE2NTYyMzA0NDEsImV4cCI6MTY1Njk1MDQ0MX0.y1npId0cqo4bTzFhBBse9nc7ftpfN2pI5QcJzeddZ26d4OAuUF60iowKpzJot5DIduS1bl5dqWOkJnsu2x9lqQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/seller/show-bids/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"show-bids",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE2NTYyODk0NjMsImV4cCI6MTY1NzAwOTQ2M30.MuLLD7AYd30htbS3HEvdLuXcemOzTUNd-8RGIal8YOl-Y9-za00CIlpvRtL99DmB5igfABdApw5moC1YvOK80w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/e-auction/api/v1/seller/delete/54",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"e-auction",
+								"api",
+								"v1",
+								"seller",
+								"delete",
+								"54"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
