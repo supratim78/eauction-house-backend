@@ -1,0 +1,15 @@
+com\cts\eauction\microservices\product\controller\ProductController.class
+com\cts\eauction\microservices\product\repository\package-info.class
+com\cts\eauction\microservices\product\repository\ProductWriteRepository.class
+com\cts\eauction\microservices\product\controller\package-info.class
+com\cts\eauction\microservices\product\model\AddNewProductCommand.class
+com\cts\eauction\microservices\product\services\ProductService.class
+com\cts\eauction\events\ProductEvent.class
+com\cts\eauction\microservices\product\repository\ProductAggregate.class
+com\cts\eauction\events\package-info.class
+com\cts\eauction\events\EventType.class
+com\cts\eauction\microservices\product\model\package-info.class
+com\cts\eauction\microservices\product\model\ProductCommand.class
+com\cts\eauction\microservices\product\EauctionHouseProductServiceApplication.class
+com\cts\eauction\microservices\product\services\package-info.class
+com\cts\eauction\events\Event.class

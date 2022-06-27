@@ -1,0 +1,15 @@
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\model\package-info.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\events\package-info.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\repository\ProductAggregate.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\events\Event.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\model\AddNewProductCommand.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\events\ProductEvent.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\services\package-info.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\EauctionHouseProductServiceApplication.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\model\ProductCommand.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\controller\package-info.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\controller\ProductController.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\repository\package-info.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\repository\ProductWriteRepository.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\microservices\product\services\ProductService.java
+D:\Work\HackFSE-2022-v2\project-repo\eauction-house\eauction-house-product-service\src\main\java\com\cts\eauction\events\EventType.java

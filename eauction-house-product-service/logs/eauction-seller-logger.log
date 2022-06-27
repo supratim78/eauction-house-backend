@@ -1,0 +1,24 @@
+2022-06-27 05:53:20,418 INFO org.apache.kafka.clients.NetworkClient [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Node 0 disconnected.
+2022-06-27 05:53:39,729 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h16m19s707ms301µs600ns).
+2022-06-27 05:55:52,693 INFO org.apache.kafka.clients.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Resetting the last seen epoch of partition PRODUCTS_ON_AUCTION-0 to 0 since the associated topicId changed from null to dpooxllMSyGxqYtu52bpZg
+2022-06-27 05:57:21,027 INFO com.cts.eauction.microservices.product.services.ProductService [http-nio-8030-exec-4] productCommand=Product [id=54, productName=null, shortDescription=null, detailedDescription=null, category=null, startingPrice=null, bidEndDate=null, sellerId=null]
+2022-06-27 05:57:21,204 INFO com.cts.eauction.microservices.product.services.ProductService [http-nio-8030-exec-4] product Delete Event=ProductEvent [productId=54, productName=null, shortDescription=null, detailedDescription=null, category=null, startingPrice=null, bidEndDate=null, sellerId=null, id=59d2a4ad-c8dc-4964-8190-d40575748dda, created=Mon Jun 27 05:57:21 IST 2022, eventType=DELETE]
+2022-06-27 05:57:41,332 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:02:41,348 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:07:41,356 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:12:41,356 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:17:41,307 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:22:41,260 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:27:41,211 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:32:41,177 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:37:41,145 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:42:41,103 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:47:41,075 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 06:52:41,046 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 09:31:37,368 INFO org.apache.kafka.clients.NetworkClient [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Node 0 disconnected.
+2022-06-27 09:31:41,394 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h38m31s69ms40µs600ns).
+2022-06-27 15:41:31,974 INFO org.apache.kafka.clients.NetworkClient [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Node 0 disconnected.
+2022-06-27 15:41:56,251 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h10m18s354ms58µs900ns).
+2022-06-27 15:45:38,841 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 15:50:38,877 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-06-27 15:55:38,885 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
