@@ -1,0 +1,14 @@
+com\cts\eauction\microservices\bid\EauctionHouseBidServiceApplication.class
+com\cts\eauction\microservices\bid\controller\BidController.class
+com\cts\eauction\microservices\bid\service\BidService.class
+com\cts\eauction\microservices\bid\repository\package-info.class
+com\cts\eauction\microservices\bid\repository\BidAggregate.class
+com\cts\eauction\microservices\bid\model\package-info.class
+com\cts\eauction\microservices\bid\service\package-info.class
+com\cts\eauction\events\package-info.class
+com\cts\eauction\events\EventType.class
+com\cts\eauction\microservices\bid\controller\package-info.class
+com\cts\eauction\microservices\bid\repository\BidRepository.class
+com\cts\eauction\events\BidEvent.class
+com\cts\eauction\events\Event.class
+com\cts\eauction\microservices\bid\model\BidCommand.class
