@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
+		<docker.image.prefix>eauction-house-backend</docker.image.prefix>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -78,6 +79,31 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				 <groupId>com.spotify</groupId>
+				 <artifactId>docker-maven-plugin</artifactId>
+				 <version>1.0.0</version>
+								 
+				 <configuration>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+					   <resource>
+						  <directory>${project.build.directory}</directory>
+						  <include>${project.build.finalName}.jar</include>
+					   </resource>
+					</resources>
+				 </configuration>
+				 
+				 <dependencies>
+                   <dependency>
+                       <groupId>javax.activation</groupId>
+                       <artifactId>javax.activation-api</artifactId>
+                       <version>1.2.0</version>
+                       <scope>compile</scope>
+                   </dependency>
+				 </dependencies>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
