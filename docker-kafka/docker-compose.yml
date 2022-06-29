@@ -1,0 +1,80 @@
+version: '3'
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/apps/mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=citizix
+      - MONGO_INITDB_ROOT_PASSWORD=S3cret
+  configuration-service:
+    image: eauction-house-backend/eauction-house-configuration-service
+    container_name: eauction-house-configuration-service
+    ports:
+      - "8888:8888"
+  discovery:
+    image: eauction-house-backend/eauction-house-discovery-service
+    container_name: eauction-house-discovery-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8010:8010"
+  gateway:
+    image: eauction-house-backend/eauction-house-gateway-service
+    container_name: eauction-house-gateway-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8080:8080"
+  seller:
+    image: eauction-house-backend/eauction-house-seller-service
+    container_name: eauction-house-seller-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8020:8020"
+  product:
+    image: eauction-house-backend/eauction-house-product-service
+    container_name: eauction-house-product-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8030:8030"
+  buyer:
+    image: eauction-house-backend/eauction-house-buyer-service
+    container_name: eauction-house-buyer-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8040:8040"
+  bid:
+    image: eauction-house-backend/eauction-house-bid-service
+    container_name: eauction-house-bid-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8050:8050"
+  listing:
+    image: eauction-house-backend/eauction-house-listing-service
+    container_name: eauction-house-listing-service
+    depends_on: 
+      - configuration-service
+    ports:
+      - "8060:8060"
+   
