@@ -105,7 +105,7 @@
 				 <version>1.2.2</version>
 								 
 				 <configuration>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<imageName>bid-service</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
 					<resources>
 					   <resource>

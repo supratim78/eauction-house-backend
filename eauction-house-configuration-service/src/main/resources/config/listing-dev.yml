@@ -7,7 +7,7 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: "http://discovery:8010/eureka/"
+      defaultZone: "http://discovery-service:8010/eureka/"
 spring:
   application:
     name: listing
