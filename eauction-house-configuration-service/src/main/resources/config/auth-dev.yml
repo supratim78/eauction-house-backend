@@ -7,7 +7,7 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: "http://localhost:8010/eureka/"
+      defaultZone: "http://discovery:8010/eureka/"
 jwt:
   secret: "SECRET"
   token:
@@ -25,6 +25,6 @@ spring:
       hibernate:
         dialect: "org.hibernate.dialect.MySQL8Dialect"
   datasource:
-    url: "jdbc:mysql://localhost:3306/eauction_house_user"
-    username: "dev"
-    password: "password1"
+    url: "jdbc:mysql://mongodb:3306/eauction_house_user"
+    username: "root"
+    password: "pass@word1"

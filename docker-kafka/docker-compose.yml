@@ -23,58 +23,152 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=citizix
       - MONGO_INITDB_ROOT_PASSWORD=S3cret
-  configuration-service:
+    networks: 
+      - mynetwork
+  mysqldb:
+    image: mysql:8.0.17
+    networks: 
+      - mynetwork
+    environment:
+      MYSQL_ROOT_PASSWORD: pass@word1
+      MYSQL_DATABASE: eauction_house_seller
+    ports:
+      - "3306:3306"    
+  configuration:
     image: eauction-house-backend/eauction-house-configuration-service
-    container_name: eauction-house-configuration-service
+    container_name: configuration-service
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     ports:
       - "8888:8888"
+    networks: 
+      - mynetwork  
   discovery:
     image: eauction-house-backend/eauction-house-discovery-service
-    container_name: eauction-house-discovery-service
+    container_name: discovery-service
+    restart: on-failure
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
     ports:
-      - "8010:8010"
+      - "8010:8010" 
+    networks: 
+      - mynetwork
   gateway:
     image: eauction-house-backend/eauction-house-gateway-service
-    container_name: eauction-house-gateway-service
+    container_name: gateway-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
     ports:
-      - "8080:8080"
+      - "8081:8081"
+    networks: 
+      - mynetwork
+  auth:
+    image: eauction-house-backend/eauction-house-auth-service
+    container_name: auth-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
+    depends_on: 
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
+      mysqldb:
+        condition: service_started  
+    ports:
+      - "8090:8090"
+    networks: 
+      - mynetwork
   seller:
     image: eauction-house-backend/eauction-house-seller-service
-    container_name: eauction-house-seller-service
+    container_name: seller-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
+      mysqldb:
+        condition: service_started
     ports:
       - "8020:8020"
+    networks: 
+      - mynetwork
   product:
     image: eauction-house-backend/eauction-house-product-service
-    container_name: eauction-house-product-service
+    container_name: product-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
+      mysqldb:
+        condition: service_started
     ports:
       - "8030:8030"
+    networks: 
+      - mynetwork
   buyer:
     image: eauction-house-backend/eauction-house-buyer-service
-    container_name: eauction-house-buyer-service
+    container_name: buyer-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
+      mysqldb:
+        condition: service_started
     ports:
       - "8040:8040"
+    networks: 
+      - mynetwork
   bid:
     image: eauction-house-backend/eauction-house-bid-service
-    container_name: eauction-house-bid-service
+    container_name: bid-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
+      mysqldb:
+        condition: service_started
     ports:
       - "8050:8050"
+    networks: 
+      - mynetwork
   listing:
     image: eauction-house-backend/eauction-house-listing-service
-    container_name: eauction-house-listing-service
+    container_name: listing-service
+    restart: on-failure
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery:8010/eureka
     depends_on: 
-      - configuration-service
+      configuration:
+        condition: service_started
+      discovery:
+        condition: service_started
     ports:
       - "8060:8060"
-   
+    networks: 
+      - mynetwork
+networks: 
+  mynetwork:
+    driver: bridge  
