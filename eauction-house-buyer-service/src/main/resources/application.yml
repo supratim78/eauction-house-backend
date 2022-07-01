@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Buyer
+    name: buyer
   profiles:
     active: dev
   config:

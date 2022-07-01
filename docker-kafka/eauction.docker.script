@@ -1,0 +1,36 @@
+Create Network ->
+
+docker swarm init
+
+docker network create --attachable -d overlay eauctionHouseNet
+
+Create the mongo, mysql & adminer container->
+
+docker run -it -d --name mongo-container -p 27017:27017 --network eauctionHouseNet --restart always -v mongodb_data_container:/data/db mongo:latest
+
+docker run -it -d --name mysql-container -p 3306:3306 --network eauctionHouseNet -e MYSQL_ROOT_PASSWORD=password1 --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+
+docker run -d -p 8888:8888 --name configuration-service --network eauctionHouseNet -e --restart always configuration-service:latest
+
+docker run -d -p 8081:8081 --name gateway-service --network eauctionHouseNet -e --restart always gateway-service:latest
+
+docker run -d -p 8081:8081 --name gateway-service --network eauctionHouseNet -e --restart always gateway-service:latest
+
+docker-compose -f docker-compose.infra.services.yml up
+
+docker-compose -f docker-compose.basic.services.yml up
+
+docker-compose -f docker-compose.eauction.common.services.yml up
+
+docker-compose -f docker-compose.eauction.seller.services.yml up
+
+docker-compose -f docker-compose.eauction.buyer.services.yml up
+
+
+Important commands
+
+ docker ps -aq | xargs docker stop | xargs docker rm
+ 
+ docker tag local-image:tagname new-repo:tagname
+ docker push new-repo:tagname
+

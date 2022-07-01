@@ -22,11 +22,11 @@ public class GatewayConfig {
 	
 	@Bean
 	public RouteLocator routes(RouteLocatorBuilder builder) {
-		return builder.routes().route("SELLER-ADD-PRODUCT", r -> r.path("/e-auction/api/v1/seller/add-product/**").filters(f -> f.filter(filter)).uri("http://localhost:8020/"))
-				.route("SELLER-DELETE-PRODUCT", r -> r.path("/e-auction/api/v1/seller/delete/**").filters(f -> f.filter(filter)).uri("http://localhost:8020/"))
-				.route("BUYER", r -> r.path("/e-auction/api/v1/buyer/**").filters(f -> f.filter(filter)).uri("http://localhost:8040/"))
-				.route("LISTING", r -> r.path("/e-auction/api/v1/seller/show-bids/**").filters(f -> f.filter(filter)).uri("http://localhost:8060/"))
-				.route("AUTH", r -> r.path("/e-auction/api/v1/user/**").filters(f -> f.filter(filter)).uri("http://localhost:8090/")).build();
+		return builder.routes().route("SELLER-ADD-PRODUCT", r -> r.path("/e-auction/api/v1/seller/add-product/**").filters(f -> f.filter(filter)).uri("http://seller-service:8020/"))
+				.route("SELLER-DELETE-PRODUCT", r -> r.path("/e-auction/api/v1/seller/delete/**").filters(f -> f.filter(filter)).uri("http://seller-service:8020/"))
+				.route("BUYER", r -> r.path("/e-auction/api/v1/buyer/**").filters(f -> f.filter(filter)).uri("http://buyer-service:8040/"))
+				.route("LISTING", r -> r.path("/e-auction/api/v1/seller/show-bids/**").filters(f -> f.filter(filter)).uri("http://listing-service:8060/"))
+				.route("AUTH", r -> r.path("/e-auction/api/v1/user/**").filters(f -> f.filter(filter)).uri("http://auth-service:8090/")).build();
 	}
 	
 	@Bean

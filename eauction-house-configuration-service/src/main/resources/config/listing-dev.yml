@@ -15,8 +15,8 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: "kafka:9092"
-          defaultBrokerPort: "9092"
+          brokers: "broker:29092"
+          defaultBrokerPort: "29092"
           zkNodes: "zookeeper"
           defaultZkPort: "2181"
       bindings:
@@ -29,6 +29,6 @@ spring:
   data:
     mongodb:
       port: "27017"
-      host: "mongodb"
+      host: "mongo-container"
       database: "EAUCTION_HOUSE"
   

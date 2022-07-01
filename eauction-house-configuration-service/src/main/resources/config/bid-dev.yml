@@ -7,7 +7,7 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: "http://discovery:8010/eureka/"
+      defaultZone: "http://discovery-service:8010/eureka/"
 spring:
   application:
     name: Bid
@@ -15,8 +15,8 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: "kafka:9092"
-          defaultBrokerPort: "9092"
+          brokers: "broker:29092"
+          defaultBrokerPort: "29092"
           zkNodes: "zookeeper"
           defaultZkPort: "2181"
       bindings:
@@ -31,9 +31,10 @@ spring:
       hibernate:
         dialect: "org.hibernate.dialect.MySQL8Dialect"
   datasource:
-    url: "jdbc:mysql://mongodb:3306/eauction_house_bid"
+    driver-class-name: "com.mysql.jdbc.Driver"
+    url: "jdbc:mysql://mysql-container:3306/eauction_house_bid"
     username: "root"
-    password: "pass@word1"
+    password: "password1"
   #kafka:
   #  producer:
   #   key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
