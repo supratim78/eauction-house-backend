@@ -1,0 +1,17 @@
+version: '3'
+services: 
+    frontend:
+        build: 
+            context: .
+            dockerfile: ../.././eauction-house-frontend/Dockerfile
+        command: npm run start
+        container_name: frontend
+        ports:
+            - "3000:3000"        
+        volumes: 
+            - ./:/frontend
+            - /frontend/node_modules
+networks:
+  default:
+    external:
+      name: eauctionHouseNet

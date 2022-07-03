@@ -1,21 +1,21 @@
 version: '3'
 services:
   seller-service:
-    image: seller-service
+    image: eauctionathackfse/seller-service
     container_name: seller-service
     environment:
       eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
     ports:
       - "8020:8020"
   product-service:
-    image: product-service
+    image: eauctionathackfse/product-service
     container_name: product-service
     environment:
       eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
     ports:
       - "8030:8030"
   listing-service:
-    image: listing-service
+    image: eauctionathackfse/listing-service
     container_name: listing-service
     environment:
       eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka

@@ -1,12 +1,12 @@
 version: '3'
 services:
   discovery-service:
-    image: discovery-service
+    image: eauctionathackfse/discovery-service
     container_name: discovery-service
     ports:
       - "8010:8010"
   configuration-service:
-    image: configuration-service
+    image: eauctionathackfse/configuration-service
     container_name: configuration-service
     depends_on: 
       discovery-service:

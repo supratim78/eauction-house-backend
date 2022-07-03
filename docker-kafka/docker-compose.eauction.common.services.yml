@@ -1,14 +1,14 @@
 version: '3'
 services:
   gateway-service:
-    image: gateway-service
+    image: eauctionathackfse/gateway-service
     container_name: gateway-service
     environment:
       eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
     ports:
       - "8081:8081"
   auth-service:
-    image: auth-service
+    image: eauctionathackfse/auth-service
     container_name: auth-service
     environment:
       eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
