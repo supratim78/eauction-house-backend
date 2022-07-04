@@ -19,6 +19,6 @@ spring:
         dialect: "org.hibernate.dialect.MySQL8Dialect"
   datasource:
     driver-class-name: "com.mysql.jdbc.Driver"
-    url: "jdbc:mysql://mysql-container:3306/eauction_house_buyer"
+    url: "jdbc:mysql://100.20.149.16:3306/eauction_house_buyer"
     username: "root"
     password: "password1"

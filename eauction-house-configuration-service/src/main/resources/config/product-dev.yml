@@ -15,8 +15,8 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: "broker:29092"
-          defaultBrokerPort: "29092"
+          brokers: "100.20.149.16:9092"
+          defaultBrokerPort: "9092"
           zkNodes: "zookeeper"
           defaultZkPort: "2181"
       bindings:
@@ -30,7 +30,7 @@ spring:
         dialect: "org.hibernate.dialect.MySQL8Dialect"
   datasource:
     driver-class-name: "com.mysql.jdbc.Driver"
-    url: "jdbc:mysql://mysql-container:3306/eauction_house_product"
+    url: "jdbc:mysql://100.20.149.16:3306/eauction_house_product"
     username: "root"
     password: "password1"
  

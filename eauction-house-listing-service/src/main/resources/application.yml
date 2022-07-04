@@ -4,9 +4,9 @@ spring:
   profiles:
     active: dev
   config:
-    import: "configserver:http://configuration-service:8888"
+    import: "configserver:http://100.20.149.16:8888"
   cloud:
     config:
-      uri: http://configuration-service:8888/
+      uri: http://100.20.149.16:8888/
       username: eauctionUsr
       password: password1
