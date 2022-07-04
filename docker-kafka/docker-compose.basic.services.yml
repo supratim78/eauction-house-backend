@@ -9,8 +9,7 @@ services:
     image: eauctionathackfse/configuration-service
     container_name: configuration-service
     depends_on: 
-      discovery-service:
-        condition: service_started
+      - "discovery-service"
     environment:
       eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
     ports:
