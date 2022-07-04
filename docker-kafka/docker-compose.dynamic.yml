@@ -1,4 +1,5 @@
 version: '3'
+services:
   gateway-service:
     image: eauctionathackfse/gateway-service
     container_name: gateway-service
