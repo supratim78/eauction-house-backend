@@ -2,7 +2,7 @@ version: '3.7'
 services:
   mysql-container:
     image: mysql:latest
-	container_name: mysql-container
+    container_name: mysql-container
     environment:
       MYSQL_DATABASE: 'db'
       MYSQL_ROOT_PASSWORD: 'password1'
@@ -15,7 +15,7 @@ services:
       - mysql_data_container:/var/lib/mysql
   mongo-container:
     image: mongo:latest
-	container_name: mongo-container
+    container_name: mongo-container
     ports:
       - '27017:27017'
     volumes:
