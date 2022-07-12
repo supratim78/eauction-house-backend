@@ -1,0 +1,20 @@
+version: '3'
+services:
+  discovery-service:
+    image: eauctionathackfse/discovery-service
+    container_name: discovery-service
+    ports:
+      - "8010:8010"
+  configuration-service:
+    image: eauctionathackfse/configuration-service
+    container_name: configuration-service
+    depends_on: 
+      - "discovery-service"
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
+    ports:
+      - "8888:8888"
+networks:
+  default:
+    external:
+      name: eauctionHouseNet

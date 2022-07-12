@@ -1,0 +1,20 @@
+version: '3'
+services:
+  buyer-service:
+    image: eauctionathackfse/buyer-service
+    container_name: buyer-service
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
+    ports:
+      - "8040:8040"
+  bid-service:
+    image: eauctionathackfse/bid-service
+    container_name: bid-service
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery-service:8010/eureka
+    ports:
+      - "8050:8050"
+networks:
+  default:
+    external:
+      name: eauctionHouseNet

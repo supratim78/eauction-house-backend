@@ -1,0 +1,82 @@
+Create Network ->
+
+docker swarm init
+
+docker network create --attachable -d overlay eauctionHouseNet
+
+Create the mongo, mysql & adminer container->
+
+docker run -it -d --name mongo-container -p 27017:27017 --network eauctionHouseNet --restart always -v mongodb_data_container:/data/db mongo:latest
+
+docker run -it -d --name mysql-container -p 3306:3306 --network eauctionHouseNet -e MYSQL_ROOT_PASSWORD=password1 --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+
+docker run -d -p 8888:8888 --name configuration-service --network eauctionHouseNet -e --restart always configuration-service:latest
+
+docker run -d -p 8081:8081 --name gateway-service --network eauctionHouseNet -e --restart always gateway-service:latest
+
+docker run -d -p 8081:8081 --name gateway-service --network eauctionHouseNet -e --restart always gateway-service:latest
+
+docker build -t eauctionathackfse/eauction-frontend
+
+docker-compose -f docker-compose.infra.services.yml up
+
+docker-compose -f docker-compose.basic.services.yml up
+
+docker-compose -f docker-compose.eauction.common.services.yml up
+
+docker-compose -f docker-compose.eauction.seller.services.yml up
+
+docker-compose -f docker-compose.eauction.buyer.services.yml up
+
+
+Important commands
+
+ mvn clean package dockerfile:push
+
+ docker ps -aq | xargs docker stop | xargs docker rm
+ 
+ 
+ 
+ docker tag 8af7d32a4258 eauctionathackfse/configuration-service:latest
+ docker push eauctionathackfse/configuration-service:latest
+ 
+ docker tag adb37640718e eauctionathackfse/discovery-service:latest
+ docker push eauctionathackfse/discovery-service:latest
+ 
+ docker tag 0ddc49e81840 eauctionathackfse/auth-service:latest
+ docker push eauctionathackfse/auth-service:latest
+ 
+ docker tag f4116dc9c176 eauctionathackfse/gateway-service:latest
+ docker push eauctionathackfse/gateway-service:latest
+ 
+ docker tag 7a1fea42222c eauctionathackfse/seller-service:latest
+ docker push eauctionathackfse/seller-service:latest
+ 
+ docker tag 6019d19af8a0 eauctionathackfse/product-service:latest
+ docker push eauctionathackfse/product-service:latest
+ 
+ docker tag abebd1795c7f eauctionathackfse/listing-service:latest
+ docker push eauctionathackfse/listing-service:latest
+ 
+ docker tag 730f07c7de9b eauctionathackfse/buyer-service:latest
+ docker push eauctionathackfse/buyer-service:latest
+ 
+ docker tag a8ce2b5d707e eauctionathackfse/bid-service:latest
+ docker push eauctionathackfse/bid-service:latest
+ 
+ docker tag 6f21a84dd1d9 eauctionathackfse/eauction-frontend:latest
+ docker push eauctionathackfse/eauction-frontend:latest
+ 
+ docker tag 0ef9083d9892 eauctionathackfse/mysql:latest
+ docker push eauctionathackfse/mysql:latest
+ 
+ docker tag c8b57c4bf7e3 eauctionathackfse/mongo:latest
+ docker push eauctionathackfse/mongo:latest
+ 
+ docker tag 3a7ea656f1af eauctionathackfse/cp-zookeeper:latest
+ docker push eauctionathackfse/cp-zookeeper:latest
+ 
+ docker tag 5069d65bcc55 eauctionathackfse/cp-kafka:latest
+ docker push eauctionathackfse/cp-kafka:latest
+ 
+

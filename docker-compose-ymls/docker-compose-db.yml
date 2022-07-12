@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  mysql-container:
+    image: mysql:latest
+	container_name: mysql-container
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_ROOT_PASSWORD: 'password1'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - mysql_data_container:/var/lib/mysql
+  mongo-container:
+    image: mongo:latest
+	container_name: mongo-container
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data_container:/data/db
+volumes:
+  mongodb_data_container:
+  mysql_data_container:
+networks:
+  default:
+    external:
+      name: eauctionHouseNet
+  
